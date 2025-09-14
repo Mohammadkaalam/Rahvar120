@@ -69,7 +69,7 @@ body {
   font-weight: bold;
 }
 
-/* 📌 چینش لوزی‌ها */
+/* 📌 چینش لوزی‌ها در دسکتاپ */
 .services a:nth-child(1) {
   grid-column: 2;
   grid-row: 1;
@@ -94,6 +94,46 @@ body {
   grid-column: 2;
   grid-row: 3;
 }
+
+/* 📱 ریسپانسیو */
+@media (max-width: 768px) {
+  .services {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .service-item {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+  }
+
+  /* کارت‌ها زیر هم بیان */
+  .services a:nth-child(1),
+  .services a:nth-child(2),
+  .services a:nth-child(3),
+  .services a:nth-child(4),
+  .services a:nth-child(5) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-item {
+    width: 100px;
+    height: 100px;
+  }
+
+  .service-item i {
+    font-size: 20px;
+  }
+
+  .service-item span {
+    font-size: 12px;
+  }
+}
+
 
 
 
