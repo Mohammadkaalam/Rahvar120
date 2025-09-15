@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Tahoma", sans-serif;
+}
+
+body {
+  background: #d9f0f3 url("pattern.png");
+  color: #222;
+  direction: rtl;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  background-color: #cbe5e5;
+  border-radius: 1rem;
+}
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.menu-btn {
+  background: #778899;
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* خبر اصلی */
+.main-news {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.main-text h3 {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.main-text p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.main-text span {
+  margin-top: auto;
+}
+
+.btn-view {
+  align-self: flex-start;
+  background: #98b6e4;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-right: auto;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+/* --- اسلایدر --- */
+.main-img {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.main-img img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  animation: slideAnimation 9s infinite;
+}
+
+/* نمایش تصویر مربوط به رادیو */
+#slide1:checked~.main-news .main-img .img1,
+#slide2:checked~.main-news .main-img .img2,
+#slide3:checked~.main-news .main-img .img3 {
+  opacity: 1;
+  animation: none;
+  /* وقتی کاربر انتخاب می‌کند، انیمیشن متوقف شود */
+}
+
+/* انیمیشن خودکار */
+@keyframes slideAnimation {
+
+  0%,
+  30% {
+    opacity: 1;
+  }
+
+  33%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* فلش‌ها */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* کارت‌ها */
+.news-slider {
+  display: flex;
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  /* برای اینکه متن روی تصویر قرار بگیرد */
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease ;
+
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  /* تصویر تمام ارتفاع کارت را پر کند */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+
+}
+
+.card-text {
+  position: absolute;
+  /* متن روی تصویر */
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  /* پس‌زمینه نیمه شفاف برای خوانایی متن */
+  color: white;
+  padding: 0.5rem;
+  transition: background 0.3s ease;
+
+}
+
+.card:hover .card-text {
+  background: rgba(0, 0, 0, 0.6);
+  /* پس‌زمینه کمی تیره‌تر شود */
+}
+/* کارت‌ها */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تصویر داخل کارت */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* متن روی تصویر */
+.card-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+/* افکت هاور */
+.card:hover {
+  transform: translateY(-5px); /* کارت کمی بالا می‌رود */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: shake 0.6s ease-in-out; /* اضافه کردن تکان */
+}
+
+.card:hover img {
+  transform: scale(1.05); /* تصویر کمی بزرگ شود */
+}
+
+.card:hover .card-text {
+  background: rgba(0,0,0,0.6); /* پس‌زمینه کمی تیره‌تر شود */
+}
+
+/* انیمیشن تکان خوردن */
+@keyframes shake {
+  0% { transform: translateY(-5px) rotate(0deg); }
+  25% { transform: translateY(-6px) rotate(-1deg); }
+  50% { transform: translateY(-5px) rotate(1deg); }
+  75% { transform: translateY(-6px) rotate(-1deg); }
+  100% { transform: translateY(-5px) rotate(0deg); }
+}
+
+
+.card-text h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.card-text .date {
+  font-size: 0.8rem;
+  color: #ddd;
+}
+
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .main-news {
+    grid-template-columns: 1fr;
+  }
+
+  .news-slider {
+    flex-direction: column;
+  }
+
+  .main-img {
+    height: 200px;
+  }
+}

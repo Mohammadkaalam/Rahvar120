@@ -1,74 +1,83 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
-  <title>سامانه مدرن راهور</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- فونت و آیکن‌ها -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اخبار مهم</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="container">
-    
-    <!-- ستون خدمات -->
-   <aside class="services">
-  <a href="#" class="service-item">
-    <div class="content">
-      <i class="fa-solid fa-car-side"></i>
-      <span>چقدر خلافی دارم؟</span>
-    </div>
-  </a>
-  <a href="#" class="service-item">
-    <div class="content">
-      <i class="fa-solid fa-id-card"></i>
-      <span>نمره منفی من؟</span>
-    </div>
-  </a>
-  <a href="#" class="service-item">
-    <div class="content">
-      <i class="fa-solid fa-location-dot"></i>
-      <span>ماشینم کجاست؟</span>
-    </div>
-  </a>
-  <a href="#" class="service-item">
-    <div class="content">
-      <i class="fa-solid fa-license-plate"></i>
-      <span>پلاک‌های من</span>
-    </div>
-  </a>
-  <a href="#" class="service-item">
-    <div class="content">
-      <i class="fa-solid fa-file-circle-exclamation"></i>
-      <span>استعلام کروکی</span>
-    </div>
-  </a>
-</aside>
-
-
-    
-    <!-- ستون اخبار -->
-    <main class="news">
+  <main class="container">
+     <!-- عنوان و منو -->
+    <div class="news-header">
+        <button class="menu-btn">☰</button>
       <h2>اخبار مهم</h2>
       
-      <div class="news-card big">
-        <img src="image\4.jpg" alt="خبر اصلی">
-        <h3>تصادفات منجر به فوت در کدام نقاط تهران رخ می‌دهد؟</h3>
-        <p>رئیس پلیس راهور تهران بزرگ در نشست خبری: مناطق 4، 15 و 12 از نظر فوتی پرحادثه‌ترین مناطق تهران هستند.</p>
+        <a href="#" class="btn-view">مشاهده همه</a>
+    </div>
+
+    <!-- رادیوها -->
+    <input type="radio" id="slide1" name="slider" checked>
+    <input type="radio" id="slide2" name="slider">
+    <input type="radio" id="slide3" name="slider">
+
+   
+
+    <!-- خبر اصلی -->
+    <section class="main-news">
+      <div class="main-img">
+        <img src="image/1.png" alt="خبر ۱" class="img1">
+        <img src="image/2.jpg" alt="خبر ۲" class="img2">
+        <img src="image/4.jpg" alt="خبر ۳" class="img3">
+
+        <!-- فلش‌ها -->
+        <label for="slide3" class="prev">&#10094;</label>
+        <label for="slide2" class="prev">&#10094;</label>
+        <label for="slide1" class="prev">&#10094;</label>
+
+        <label for="slide2" class="next">&#10095;</label>
+        <label for="slide3" class="next">&#10095;</label>
+        <label for="slide1" class="next">&#10095;</label>
       </div>
-      
-      <div class="news-list">
-        <div class="news-card">
-          <img src="image\2.jpg" alt="خبر فرعی">
-          <p>عنوان خبر شماره ۱</p>
-        </div>
-        <div class="news-card">
-          <img src="image\1.png" alt="خبر فرعی">
-          <p>عنوان خبر شماره ۲</p>
-        </div>
+
+      <div class="main-text">
+        <h3>تیتر خبر اصلی اینجا قرار می‌گیرد</h3>
+        <p>سردار سید ابوالفضل موسوی‌پور، رئیس پلیس راهور تهران بزرگ در حاشیه نشست مشترک پلیس و شهرداری در خصوص استقبال از مهرسردار سید ابوالفضل موسوی‌پور، رئیس پلیس راهور تهران بزرگ در حاشیه نشست مشترک پلیس و شهرداری در خصوص استقبال از مهر</p>
+        <span class="date">۱۴۰۴/۶/۲۳ - ۱۴:۰۶</span>
+                <a href="#" class="btn-view">ادامه خبر</a>
+
       </div>
-      
-    </main>
-    
-  </div>
+    </section>
+
+    <!-- کارت‌های کوچک برای انتخاب -->
+    <section class="news-slider">
+      <label for="slide1" class="card">
+        <img src="image/1.png" alt="خبر ۱">
+        <div class="card-text">
+          <h4>خبر شماره ۱</h4>
+          <span class="date">۱۴۰۴/۶/۲۳ - ۱۵:۴۵</span>
+        </div>
+      </label>
+
+      <label for="slide2" class="card">
+        <img src="image/2.jpg" alt="خبر ۲">
+        <div class="card-text">
+          <h4>خبر شماره ۲</h4>
+          <span class="date">۱۴۰۴/۶/۲۳ - ۱۴:۵۵</span>
+        </div>
+      </label>
+
+      <label for="slide3" class="card">
+        <img src="image/4.jpg" alt="خبر ۳">
+        <div class="card-text">
+          <h4>خبر شماره ۳</h4>
+          <span class="date">۱۴۰۴/۶/۲۳ - ۱۳:۴۵</span>
+        </div>
+      </label>
+    </section>
+
+  </main>
 </body>
 </html>
