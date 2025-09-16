@@ -14,12 +14,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 20px;
     }
 
     .container {
       position: relative;
       display: flex;
       flex-direction: column;
+      gap: 10px;
     }
 
     .diamond {
@@ -59,7 +61,7 @@
       line-height: 1.4;
     }
 
-    /* چینش یکی در میون */
+    /* چینش یکی در میون (دسکتاپ) */
     .diamond:nth-child(odd) {
       margin-right: 70px;
       align-self: flex-end;
@@ -79,6 +81,43 @@
       font-weight: bold;
       font-size: 14px;
       color: #555;
+    }
+
+    /* 📱 ریسپانسیو برای موبایل */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .diamond {
+        width: 120px;
+        height: 120px;
+        transform: rotate(0deg); /* لوزی → مربع */
+      }
+
+      .diamond:hover {
+        transform: scale(1.05);
+      }
+
+      .content {
+        transform: rotate(0deg);
+      }
+
+      .diamond:nth-child(odd),
+      .diamond:nth-child(even) {
+        margin: 0; /* دیگه margin چپ و راست لازم نیست */
+        align-self: center;
+      }
+
+      .title {
+        position: static;
+        writing-mode: horizontal-tb;
+        text-align: center;
+        margin-top: 20px;
+      }
     }
   </style>
 </head>
