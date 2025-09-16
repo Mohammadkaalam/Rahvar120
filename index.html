@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>اخبار مهم</title>
   <link rel="stylesheet" href="styles.css">
-</head>
 
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
 <body>
   <main class="container">
      <!-- عنوان و منو -->
     <div class="news-header">
-        <button class="menu-btn">☰</button>
+      <button class="menu-btn">☰</button>
       <h2>اخبار مهم</h2>
-      
-        <a href="#" class="btn-view">مشاهده همه</a>
+      <a href="#" class="btn-view">مشاهده همه</a>
     </div>
-
-    <!-- رادیوها -->
-    <input type="radio" id="slide1" name="slider" checked>
-    <input type="radio" id="slide2" name="slider">
-    <input type="radio" id="slide3" name="slider">
-
-   
 
     <!-- خبر اصلی -->
     <section class="main-news">
-      <div class="main-img">
-        <img src="image/1.png" alt="خبر ۱" class="img1">
-        <img src="image/2.jpg" alt="خبر ۲" class="img2">
-        <img src="image/4.jpg" alt="خبر ۳" class="img3">
+      <div class="main-img swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="image/1.png" alt="خبر ۱">
+          </div>
+          <div class="swiper-slide">
+            <img src="image/2.jpg" alt="خبر ۲">
+          </div>
+          <div class="swiper-slide">
+            <img src="image/4.jpg" alt="خبر ۳">
+          </div>
+        </div>
 
-        <!-- فلش‌ها -->
-        <label for="slide3" class="prev">&#10094;</label>
-        <label for="slide2" class="prev">&#10094;</label>
-        <label for="slide1" class="prev">&#10094;</label>
+        <!-- فلش‌های ناوبری -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
 
-        <label for="slide2" class="next">&#10095;</label>
-        <label for="slide3" class="next">&#10095;</label>
-        <label for="slide1" class="next">&#10095;</label>
+        <!-- دات‌ها -->
+        <div class="swiper-pagination"></div>
       </div>
 
       <div class="main-text">
         <h3>تیتر خبر اصلی اینجا قرار می‌گیرد</h3>
-        <p>سردار سید ابوالفضل موسوی‌پور، رئیس پلیس راهور تهران بزرگ در حاشیه نشست مشترک پلیس و شهرداری در خصوص استقبال از مهرسردار سید ابوالفضل موسوی‌پور، رئیس پلیس راهور تهران بزرگ در حاشیه نشست مشترک پلیس و شهرداری در خصوص استقبال از مهر</p>
+        <p>
+          سردار سید ابوالفضل موسوی‌پور، رئیس پلیس راهور تهران بزرگ در حاشیه نشست مشترک پلیس و شهرداری
+          در خصوص استقبال از مهرسردار سید ابوالفضل موسوی‌پور، رئیس پلیس راهور تهران بزرگ در حاشیه نشست مشترک
+          پلیس و شهرداری در خصوص استقبال از مهر
+        </p>
         <span class="date">۱۴۰۴/۶/۲۳ - ۱۴:۰۶</span>
-                <a href="#" class="btn-view">ادامه خبر</a>
-
+        <a href="#" class="btn-view">ادامه خبر</a>
       </div>
     </section>
 
     <!-- کارت‌های کوچک برای انتخاب -->
     <section class="news-slider">
-      <label for="slide1" class="card">
+      <label class="card">
         <img src="image/1.png" alt="خبر ۱">
         <div class="card-text">
           <h4>خبر شماره ۱</h4>
@@ -61,7 +63,7 @@
         </div>
       </label>
 
-      <label for="slide2" class="card">
+      <label class="card">
         <img src="image/2.jpg" alt="خبر ۲">
         <div class="card-text">
           <h4>خبر شماره ۲</h4>
@@ -69,7 +71,7 @@
         </div>
       </label>
 
-      <label for="slide3" class="card">
+      <label class="card">
         <img src="image/4.jpg" alt="خبر ۳">
         <div class="card-text">
           <h4>خبر شماره ۳</h4>
@@ -77,7 +79,28 @@
         </div>
       </label>
     </section>
-
   </main>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- فعال‌سازی Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </body>
 </html>

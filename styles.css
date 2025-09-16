@@ -84,34 +84,22 @@ body {
 }
 
 /* --- اسلایدر --- */
+/* --- اسلایدر با Swiper --- */
 .main-img {
   position: relative;
   width: 100%;
   height: 300px;
-  overflow: hidden;
   border-radius: 10px;
+  overflow: hidden;
 }
 
-.main-img img {
-  position: absolute;
-  top: 0;
-  right: 0;
+.main-img .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-  animation: slideAnimation 9s infinite;
 }
 
-/* نمایش تصویر مربوط به رادیو */
-#slide1:checked~.main-news .main-img .img1,
-#slide2:checked~.main-news .main-img .img2,
-#slide3:checked~.main-news .main-img .img3 {
-  opacity: 1;
-  animation: none;
-  /* وقتی کاربر انتخاب می‌کند، انیمیشن متوقف شود */
-}
+
 
 /* انیمیشن خودکار */
 @keyframes slideAnimation {
