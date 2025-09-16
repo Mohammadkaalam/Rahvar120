@@ -20,8 +20,6 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 20px;
     }
 
     .diamond {
@@ -58,6 +56,18 @@
       margin: 0;
       font-size: 14px;
       font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* چینش یکی در میون */
+    .diamond:nth-child(odd) {
+      margin-right: 70px;
+      align-self: flex-end;
+    }
+
+    .diamond:nth-child(even) {
+      margin-left: 70px;
+      align-self: flex-start;
     }
 
     .title {
