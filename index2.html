@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>میز خدمات</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(to bottom, #b8e2e9, #d2f0f3);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .diamond {
+      width: 140px;
+      height: 140px;
+      background: #fff;
+      transform: rotate(45deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .diamond:hover {
+      transform: rotate(45deg) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .content {
+      transform: rotate(-45deg);
+      text-align: center;
+    }
+
+    .content img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 8px;
+    }
+
+    .content p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .title {
+      position: absolute;
+      left: 180px;
+      top: 50%;
+      transform: translateY(-50%);
+      writing-mode: vertical-rl;
+      font-weight: bold;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="diamond">
+      <div class="content">
+        <img src="https://cdn-icons-png.flaticon.com/512/1040/1040254.png" alt="">
+        <p>چقدر خلاف دارم؟</p>
+      </div>
+    </div>
+
+    <div class="diamond">
+      <div class="content">
+        <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="">
+        <p>نمره منفی من<br>چقدره؟</p>
+      </div>
+    </div>
+
+    <div class="diamond">
+      <div class="content">
+        <img src="https://cdn-icons-png.flaticon.com/512/287/287221.png" alt="">
+        <p>ماشینم کجاست؟</p>
+      </div>
+    </div>
+
+    <div class="diamond">
+      <div class="content">
+        <img src="https://cdn-icons-png.flaticon.com/512/633/633652.png" alt="">
+        <p>پلاک های من (به زودی)</p>
+      </div>
+    </div>
+
+    <div class="diamond">
+      <div class="content">
+        <img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="">
+        <p>استعلام کروکی</p>
+      </div>
+    </div>
+
+    <div class="title">میز خدمات</div>
+  </div>
+
+</body>
+</html>
